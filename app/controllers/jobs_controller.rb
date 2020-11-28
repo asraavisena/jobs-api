@@ -5,12 +5,12 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
 
-    render json: @jobs,  include: ['languages'], status: :ok
+    render json: @jobs,  include: ['languages', 'shiftdates'], status: :ok
   end
 
   # GET /jobs/1
   def show
-    render json: @job,  include: ['languages'], status: :ok
+    render json: @job,  include: ['languages', 'shiftdates'], status: :ok
   end
 
   # POST /jobs
@@ -46,6 +46,6 @@ class JobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params.require(:job).permit(:title, :salary, language_ids: [], languages_attributes: [:id])
+      params.require(:job).permit(:title, :salary, language_ids: [], shiftdate_ids: [],languages_attributes: [:id])
     end
 end

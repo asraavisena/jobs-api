@@ -5,10 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Job.delete_all
 Joblanguage.delete_all
+Shiftdatejob.delete_all
+
 # Language.delete_all
 # User.delete_all
+# Shiftdate.delete_all
 
 # User.create(email: 'test2@test2.de',
 #             password: '123test')
@@ -18,10 +22,18 @@ Joblanguage.delete_all
 # Language.create(name: 'indonesisch')
 
 Job.create(title: 'seed jobs 1',
-           salary: 20, language_ids: [16, 17])
+           salary: 20, language_ids: [16, 17], shiftdate_ids: [8,14])
 Job.create(title: 'jobs 2',
-           salary: 5, language_ids: [17, 18])
+           salary: 5, language_ids: [17, 18], shiftdate_ids: [9,10])
 Job.create(title: 'seed 3',
-           salary: 10, language_ids: [16])
+           salary: 10, language_ids: [16], shiftdate_ids: [8,9,10,11,12])
 Job.create(title: 'seed jobs 4',
-           salary: 8, language_ids: [16, 17, 18])
+           salary: 8, language_ids: [16, 17, 18], shiftdate_ids: [8,9,10,11,12,13,14])
+
+# Shiftdate.create(name: "monday")
+# Shiftdate.create(name: "tuesday")
+# Shiftdate.create(name: "wednesday")
+# Shiftdate.create(name: "thursday")
+# Shiftdate.create(name: "friday")
+# Shiftdate.create(name: "saturday")
+# Shiftdate.create(name: "sunday")
