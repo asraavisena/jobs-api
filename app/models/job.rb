@@ -9,4 +9,17 @@ class Job < ApplicationRecord
     
     validates :languages, length: { minimum: 1 }
     accepts_nested_attributes_for :languages
+
+    # total salary for 8 hours
+    def total_salary
+        {
+            salary: salary * 8
+        }
+    end
+
+    # # 8 hours  salary
+    # def self.show_salary(id)
+    # @get_salary = Job.find(id).salary
+    # @salary_count = @get_salary * 8
+    # end
 end

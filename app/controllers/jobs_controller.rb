@@ -4,13 +4,15 @@ class JobsController < ApplicationController
   # GET /jobs
   def index
     @jobs = Job.all
+    
 
     render json: @jobs,  include: ['languages', 'shiftdates'], status: :ok
   end
 
   # GET /jobs/1
   def show
-    render json: @job,  include: ['languages', 'shiftdates'], status: :ok
+    render json: @job
+    # render json: @job,  include: 'languages', status: :ok
   end
 
   # POST /jobs
