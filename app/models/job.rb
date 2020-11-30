@@ -17,6 +17,26 @@ class Job < ApplicationRecord
         }
     end
 
+  # Search by Title
+  def self.search(search)
+    # where('title LIKE ?', "%#{search}%")
+    if search
+      # joins(:languages).where('languages.name LIKE ?', "%#{search}%") 
+      where('title LIKE ?', "%#{search}%")
+    else
+        all
+    end
+  end
+
+  # Search by Language
+  def self.searchL(search)
+    if search
+        joins(:languages).where('languages.name LIKE ?', "%#{search}%")
+    else
+        all
+    end
+  end
+
     # # 8 hours  salary
     # def self.show_salary(id)
     # @get_salary = Job.find(id).salary

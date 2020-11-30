@@ -15,6 +15,21 @@ class JobsController < ApplicationController
     # render json: @job,  include: 'languages', status: :ok
   end
 
+  # Search by title
+  def search
+    if (params[:search])
+      @search_job = Job.search(params[:search])
+      render json: @search_job
+    return
+    elsif (params[:searchL])
+      @searchL_job = Job.searchL(params[:searchL])
+      render json: @searchL_job
+    return
+    end
+  end
+
+  
+
   # POST /jobs
   def create
     @job = Job.new(job_params)

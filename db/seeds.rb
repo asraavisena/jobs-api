@@ -24,11 +24,11 @@ Shiftdatejob.delete_all
 Job.create(title: 'seed jobs 1',
            salary: 20, language_ids: [16, 17], shiftdate_ids: [8,14])
 Job.create(title: 'jobs 2',
-           salary: 5, language_ids: [17, 18], shiftdate_ids: [9,10])
+           salary: 5, language_ids: [17, 16], shiftdate_ids: [9,10])
 Job.create(title: 'seed 3',
-           salary: 10, language_ids: [16], shiftdate_ids: [8,9,10,11,12])
-Job.create(title: 'seed jobs 4',
-           salary: 8, language_ids: [16, 17, 18], shiftdate_ids: [8,9,10,11,12,13,14])
+           salary: 10, language_ids: [18], shiftdate_ids: [8,9,10,11,12])
+Job.create(title: 'testing',
+           salary: 8, language_ids: [16, 17], shiftdate_ids: [8,9,10,11,12,13,14])
 
 # Shiftdate.create(name: "monday")
 # Shiftdate.create(name: "tuesday")
