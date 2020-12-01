@@ -24,3 +24,7 @@ test:
   pool: 5
   username: asraavisena
   password: test123
+
+# test:
+#   <<: *default
+#   database: db/test.sqlite3

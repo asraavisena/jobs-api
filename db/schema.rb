@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_080841) do
     t.integer "salary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
   end
 
   create_table "languages", force: :cascade do |t|
