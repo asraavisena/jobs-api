@@ -13,7 +13,7 @@ class Api::V1::RegistrationsController < ApplicationController
                 user: user
            }, status: :created
         else
-            render json: { status: 500 }
+            render json: { status: 500 }, status: :internal_server_error
         end
     end
 end

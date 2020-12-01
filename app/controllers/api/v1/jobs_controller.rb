@@ -15,7 +15,7 @@ class Api::V1::JobsController < ApplicationController
 
   # GET /jobs/1
   def show
-    render json: @job
+    render json: @job, status: :ok
     # render json: @job,  include: 'languages', status: :ok
   end
 
@@ -23,16 +23,14 @@ class Api::V1::JobsController < ApplicationController
   def search
     if (params[:search])
       @search_job = Job.search(params[:search])
-      render json: @search_job
+      render json: @search_job, status: :ok
     return
     elsif (params[:searchL])
       @searchL_job = Job.searchL(params[:searchL])
-      render json: @searchL_job
+      render json: @searchL_job, status: :ok
     return
     end
   end
-
-  
 
   # POST /jobs
   def create
@@ -50,7 +48,7 @@ class Api::V1::JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   def update
     if @job.update(job_params)
-      render json: @job
+      render json: @job, status: :created
     else
       render json: @job.errors, status: :unprocessable_entity
     end
