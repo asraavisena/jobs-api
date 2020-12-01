@@ -16,6 +16,8 @@ Shiftdatejob.delete_all
 
 # User.create(email: 'test2@test2.de',
 #             password: '123test')
+# User.create(email: 'test@test.com',
+#             password: 'test123')
 
 # Language.create(name: 'deutsch')
 # Language.create(name: 'englisch')

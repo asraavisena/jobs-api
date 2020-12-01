@@ -1,6 +1,10 @@
 class JobsController < ApplicationController
+  include CurrentUserConcern
   before_action :set_job, only: [:show, :update, :destroy]
 
+  def home
+    render json: { status: "it's working"}
+  end
   # GET /jobs
   def index
     @jobs = Job.all
@@ -33,6 +37,7 @@ class JobsController < ApplicationController
   # POST /jobs
   def create
     @job = Job.new(job_params)
+    @job.user = @current_user
 
     if @job.save
       render json: @job, status: :created, location: @job
