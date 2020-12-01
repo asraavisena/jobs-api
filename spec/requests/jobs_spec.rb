@@ -27,11 +27,14 @@ describe 'Jobs Api', type: :request do
 
     describe 'POST /jobs' do
         it 'create new job' do
+            # Shiftdate
+            FactoryBot.create(:shiftdate, id: 1, name: 'monday')
+            FactoryBot.create(:shiftdate, id: 2, name: 'thrusday')
              # language
              FactoryBot.create(:language, id: 1, name: 'deutsch')
              FactoryBot.create(:language, id: 2, name: 'englisch')
             post '/api/v1/jobs', params: {
-                job: {title: "Create a book", salary: 10, language_ids: [1]}
+                job: {title: "Create a book", salary: 10, language_ids: [1], shiftdate_ids: [1,2]}
             }
 
             expect(response).to have_http_status(:created)

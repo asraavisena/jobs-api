@@ -11,7 +11,7 @@ class Api::V1::RegistrationsController < ApplicationController
             render json: {
                 status: :created,
                 user: user
-           }
+           }, status: :created
         else
             render json: { status: 500 }
         end
