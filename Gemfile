@@ -27,8 +27,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Database
 gem 'pg'
-# Devise
-gem 'devise'
+# rack-cors
+gem 'rack-cors'
 # Active Model Serializers
 gem 'active_model_serializers', '~> 0.10.2'
 
