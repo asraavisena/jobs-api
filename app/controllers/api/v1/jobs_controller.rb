@@ -37,10 +37,11 @@ class Api::V1::JobsController < ApplicationController
   # POST /jobs
   def create
     @job = Job.new(job_params)
-    @job.user = @current_user
+    # for testing first
+    # @job.user = @current_user
 
     if @job.save
-      render json: @job, status: :created, location: @job
+      render json: @job, status: :created
     else
       render json: @job.errors, status: :unprocessable_entity
     end
