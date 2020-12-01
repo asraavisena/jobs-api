@@ -13,7 +13,7 @@ class Api::V1::SessionsController < ApplicationController
                 user: user
            }
         else
-            render json: { status: 401 }
+            render json: { status: 401 }, status: :unauthorized
         end
     end
 
