@@ -1,5 +1,4 @@
 class Api::V1::JobsController < ApplicationController
-  include CurrentUserConcern
   before_action :set_job, only: [:show, :update, :destroy]
 
   def home
@@ -8,7 +7,6 @@ class Api::V1::JobsController < ApplicationController
   # GET /jobs
   def index
     @jobs = Job.all
-    
 
     render json: @jobs,  include: ['languages', 'shiftdates'], status: :ok
   end
@@ -54,6 +52,10 @@ class Api::V1::JobsController < ApplicationController
     end
   end
 
+  # def apply
+
+  # end
+
   # DELETE /jobs/1
   def destroy
     @job.destroy
@@ -67,6 +69,7 @@ class Api::V1::JobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params.require(:job).permit(:title, :salary, language_ids: [], shiftdate_ids: [],languages_attributes: [:id])
+      params.require(:job).permit(:title, :salary, language_ids: [],
+                                  shiftdate_ids: [], user_ids: [], languages_attributes: [:id])
     end
 end

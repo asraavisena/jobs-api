@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :jobs
       get 'search', to: "jobs#search"
       get 'search', to: "jobs#searchL"
+      get 'update/:id', to: "jobs#supdate"
 
       resources :users
       resources :registrations, only: :create
