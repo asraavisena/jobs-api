@@ -1,24 +1,21 @@
 # README
+To create user:
+**POST** *yourdomain/api/v1/registrations* with email and password
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To show all available jobs:
+**GET** *yourdomain/api/v1/jobs*
 
-Things you may want to cover:
+To show specific jobs by :id
+**GET** *yourdomain/api/v1/jobs/1*
 
-* Ruby version
+To search specific jobs by title
+**GET** *yourdomain/api/v1/search?search=testing*
 
-* System dependencies
+To search specific jobs by language
+**GET** *yourdomain/api/v1/search?searchL=testing*
 
-* Configuration
+To create a new session
+**POST** *yourdomain/api/v1/sessions*
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To logout
+**GET** *yourdomain/api/v1/logout*
