@@ -1,5 +1,6 @@
 class Job < ApplicationRecord
-   
+    # has_many :apply_jobs
+    # has_many :users, through: :apply_jobs
   
     has_many :joblanguages
     has_many :languages, through: :joblanguages
