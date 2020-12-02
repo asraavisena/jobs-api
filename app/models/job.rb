@@ -1,6 +1,5 @@
 class Job < ApplicationRecord
-    has_many :apply_jobs
-    has_many :users, through: :apply_jobs
+   
   
     has_many :joblanguages
     has_many :languages, through: :joblanguages
@@ -40,9 +39,4 @@ class Job < ApplicationRecord
     end
   end
 
-    # # 8 hours  salary
-    # def self.show_salary(id)
-    # @get_salary = Job.find(id).salary
-    # @salary_count = @get_salary * 8
-    # end
 end

@@ -52,10 +52,6 @@ class Api::V1::JobsController < ApplicationController
     end
   end
 
-  # def apply
-
-  # end
-
   # DELETE /jobs/1
   def destroy
     @job.destroy
@@ -70,6 +66,6 @@ class Api::V1::JobsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def job_params
       params.require(:job).permit(:title, :salary, language_ids: [],
-                                  shiftdate_ids: [], user_ids: [], languages_attributes: [:id])
+                                  shiftdate_ids: [], languages_attributes: [:id])
     end
 end

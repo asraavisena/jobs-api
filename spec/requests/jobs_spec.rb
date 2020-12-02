@@ -49,4 +49,21 @@ describe 'Jobs Api', type: :request do
             expect(response).to have_http_status(:created)
         end
     end
+    # describe 'PATCH apply/jobs' do
+    #     it 'create new job' do
+    #         FactoryBot.create(:user,id: 1, email: 'test@test.com', password: 'test123')
+    #         FactoryBot.create(:job, id:2, title: "testingin jobsssss", salary: 20, 
+    #         language_ids: [1,2], shiftdate_ids: [1,2])
+    #         patch '/api/v1/jobs/1', params: {
+    #             job: {user_ids: [1]}
+    #         }
+
+    #         patch '/api/v1/jobs/2', params: {
+    #             job: {user_ids: [1]}
+    #         }
+
+           
+    #         expect(response).to have_http_status(:created)
+    #     end
+    # end
 end
